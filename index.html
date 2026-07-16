@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chiara — Variable Font</title>
+<title>Nilio — Variable Font</title>
 <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
 <link rel="apple-touch-icon" href="icon/favicon-180.png">
 <style>
 @font-face {
-  font-family: 'Chiara';
-  src: url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff') format('woff');
+  font-family: 'Nilio';
+  src: url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff') format('woff');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
   --ink-muted: #7A6E60;
   --accent: #C8A882;
   --border: #DDD8CE;
-  --chiara: 'Chiara', Georgia, serif;
+  --nilio: 'Nilio', Georgia, serif;
   --mono: 'SF Mono', 'Fira Mono', monospace;
 }
 
@@ -33,7 +33,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--chiara);
+  font-family: var(--nilio);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -177,7 +177,7 @@ nav.scrolled { border-color: var(--border); }
   overflow: hidden;
   width: 100%;
   line-height: 1.2;
-  font-family: var(--chiara);
+  font-family: var(--nilio);
   transition: color 0.3s;
 }
 
@@ -232,7 +232,7 @@ nav.scrolled { border-color: var(--border); }
   border: none;
   border-bottom: 1px solid var(--border);
   padding: 4px 0;
-  font-family: var(--chiara);
+  font-family: var(--nilio);
   font-size: 14px;
   color: var(--ink);
   outline: none;
@@ -287,7 +287,7 @@ section {
 }
 .specimen-row:first-child { border-top: 1px solid var(--border); }
 
-.specimen-text { font-family: var(--chiara); color: var(--ink); line-height: 1; }
+.specimen-text { font-family: var(--nilio); color: var(--ink); line-height: 1; }
 
 .specimen-meta {
   font-family: var(--mono);
@@ -468,13 +468,13 @@ footer a:hover { color: var(--ink); }
 <body>
 
 <nav id="nav">
-  <a href="#" class="nav-logo">Chiara</a>
+  <a href="#" class="nav-logo">Nilio</a>
   <ul class="nav-links">
     <li><a href="#hero">Generator</a></li>
     <li><a href="#specimen">Specimen</a></li>
     <li><a href="#inuse">In Use</a></li>
     <li><a href="#install">Install</a></li>
-    <li><a href="https://github.com/gauthierniglio/chiara-font" target="_blank">GitHub</a></li>
+    <li><a href="https://github.com/gauthierniglio/nilio-font" target="_blank">GitHub</a></li>
   </ul>
   <div class="theme-wrap" id="theme-wrap">
     <button class="theme-btn" onclick="document.getElementById('theme-wrap').classList.toggle('open')" title="Switch theme">
@@ -491,7 +491,7 @@ footer a:hover { color: var(--ink); }
 <!-- INTRO -->
 <div id="scroll-driver">
   <div id="intro-sticky">
-    <div class="intro-word" id="intro-word">Chiara</div>
+    <div class="intro-word" id="intro-word">Nilio</div>
   </div>
 </div>
 
@@ -579,13 +579,13 @@ footer a:hover { color: var(--ink); }
     <button class="inuse-tab" onclick="switchInUse('article')">Article</button>
   </div>
   <div class="inuse-panel active" id="inuse-dashboard">
-    <iframe srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>@font-face{font-family:'Chiara';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Chiara',sans-serif;-webkit-font-smoothing:antialiased;}body{display:flex;height:100vh;background:#FAFAF8;overflow:hidden;}.sidebar{width:200px;flex-shrink:0;background:#F0EBE2;border-right:1px solid #DDD8CE;display:flex;flex-direction:column;padding:24px 16px;gap:32px;}.logo{font-variation-settings:'wght' 700;font-size:18px;color:#1A1208;letter-spacing:-0.02em;}.sidenav{display:flex;flex-direction:column;gap:2px;flex:1;}.navitem{font-variation-settings:'wght' 400;font-size:13px;color:#7A6E60;padding:8px 12px;border-radius:6px;cursor:pointer;display:block;text-decoration:none;}.navitem.active{background:#E8E0D0;color:#1A1208;font-variation-settings:'wght' 500;}.sb-footer{display:flex;align-items:center;gap:10px;}.avatar{width:32px;height:32px;border-radius:50%;background:#1A1208;color:#F5F0E8;display:flex;align-items:center;justify-content:center;font-size:11px;font-variation-settings:'wght' 600;flex-shrink:0;}.uname{font-size:12px;font-variation-settings:'wght' 500;color:#1A1208;}.urole{font-size:11px;color:#7A6E60;}.main{flex:1;display:flex;flex-direction:column;overflow:hidden;}.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid #DDD8CE;}.page-title{font-size:16px;font-variation-settings:'wght' 600;color:#1A1208;}.topbar-r{display:flex;gap:8px;align-items:center;}.badge{font-size:11px;color:#7A6E60;background:#E8E0D0;padding:4px 10px;border-radius:20px;}.btn{font-size:12px;font-variation-settings:'wght' 500;color:#F5F0E8;background:#1A1208;padding:6px 14px;border-radius:6px;cursor:pointer;border:none;font-family:'Chiara',sans-serif;}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:20px 24px;}.stat{background:white;border:1px solid #DDD8CE;border-radius:8px;padding:16px;}.slabel{font-size:11px;color:#7A6E60;margin-bottom:6px;}.sval{font-size:22px;font-variation-settings:'wght' 700;color:#1A1208;letter-spacing:-0.02em;}.sdelta{font-size:11px;margin-top:4px;font-variation-settings:'wght' 500;}.up{color:#3B8C5A;}.down{color:#C0392B;}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 24px 24px;flex:1;overflow:hidden;}.card{background:white;border:1px solid #DDD8CE;border-radius:8px;padding:16px;overflow:hidden;}.ctitle{font-size:13px;font-variation-settings:'wght' 600;color:#1A1208;margin-bottom:14px;}.table{display:flex;flex-direction:column;}.trow{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding:8px 0;border-bottom:1px solid #F0EBE2;font-size:12px;color:#1A1208;align-items:center;}.trow.hd{font-variation-settings:'wght' 500;color:#7A6E60;font-size:11px;}.pill{font-size:10px;font-variation-settings:'wght' 500;padding:2px 8px;border-radius:20px;}.g{background:#E8F5E9;color:#2E7D32;}.y{background:#FFF8E1;color:#F57F17;}.b{background:#E3F2FD;color:#1565C0;}.gr{background:#F5F5F5;color:#757575;}.acts{display:flex;flex-direction:column;gap:16px;}.act{display:flex;gap:10px;align-items:flex-start;}.dot{width:6px;height:6px;border-radius:50%;background:#C8A882;flex-shrink:0;margin-top:5px;}.atxt{font-size:12px;color:#1A1208;}.atime{font-size:11px;color:#7A6E60;margin-top:2px;}@media(max-width:600px){.sidebar{display:none}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}</style></head><body><div class='sidebar'><div class='logo'>Lumio</div><nav class='sidenav'><a class='navitem active'>Overview</a><a class='navitem'>Analytics</a><a class='navitem'>Projects</a><a class='navitem'>Team</a><a class='navitem'>Settings</a></nav><div class='sb-footer'><div class='avatar'>GN</div><div><div class='uname'>Gauthier N.</div><div class='urole'>Admin</div></div></div></div><div class='main'><div class='topbar'><div class='page-title'>Overview</div><div class='topbar-r'><div class='badge'>Jan 2025</div><button class='btn'>Export</button></div></div><div class='stats'><div class='stat'><div class='slabel'>Revenue</div><div class='sval'>€84,291</div><div class='sdelta up'>+12.4%</div></div><div class='stat'><div class='slabel'>Users</div><div class='sval'>12,048</div><div class='sdelta up'>+8.1%</div></div><div class='stat'><div class='slabel'>Churn</div><div class='sval'>2.3%</div><div class='sdelta down'>-0.4%</div></div><div class='stat'><div class='slabel'>NPS</div><div class='sval'>67</div><div class='sdelta up'>+3</div></div></div><div class='grid'><div class='card'><div class='ctitle'>Recent Projects</div><div class='table'><div class='trow hd'><span>Name</span><span>Status</span><span>Due</span></div><div class='trow'><span>Chiara v2</span><span class='pill g'>Active</span><span>Mar 12</span></div><div class='trow'><span>Brand Refresh</span><span class='pill y'>Review</span><span>Mar 28</span></div><div class='trow'><span>Design System</span><span class='pill b'>Draft</span><span>Apr 5</span></div><div class='trow'><span>Mobile App</span><span class='pill gr'>Paused</span><span>—</span></div></div></div><div class='card'><div class='ctitle'>Activity</div><div class='acts'><div class='act'><div class='dot'></div><div><div class='atxt'>New milestone reached on Chiara v2</div><div class='atime'>2 hours ago</div></div></div><div class='act'><div class='dot'></div><div><div class='atxt'>Sara left a comment on Brand Refresh</div><div class='atime'>Yesterday</div></div></div><div class='act'><div class='dot'></div><div><div class='atxt'>Design System moved to Draft</div><div class='atime'>Jan 28</div></div></div></div></div></div></div></body></html>"></iframe>
+    <iframe srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>@font-face{font-family:'Nilio';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Nilio',serif;-webkit-font-smoothing:antialiased;}body{display:flex;height:100vh;background:#FAFAF8;overflow:hidden;}.sidebar{width:200px;flex-shrink:0;background:#F0EBE2;border-right:1px solid #DDD8CE;display:flex;flex-direction:column;padding:24px 16px;gap:32px;}.logo{font-variation-settings:'wght' 700;font-size:18px;color:#1A1208;letter-spacing:-0.02em;}.sidenav{display:flex;flex-direction:column;gap:2px;flex:1;}.navitem{font-variation-settings:'wght' 400;font-size:13px;color:#7A6E60;padding:8px 12px;border-radius:6px;cursor:pointer;display:block;text-decoration:none;}.navitem.active{background:#E8E0D0;color:#1A1208;font-variation-settings:'wght' 500;}.sb-footer{display:flex;align-items:center;gap:10px;}.avatar{width:32px;height:32px;border-radius:50%;background:#1A1208;color:#F5F0E8;display:flex;align-items:center;justify-content:center;font-size:11px;font-variation-settings:'wght' 600;flex-shrink:0;}.uname{font-size:12px;font-variation-settings:'wght' 500;color:#1A1208;}.urole{font-size:11px;color:#7A6E60;}.main{flex:1;display:flex;flex-direction:column;overflow:hidden;}.topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid #DDD8CE;}.page-title{font-size:16px;font-variation-settings:'wght' 600;color:#1A1208;}.topbar-r{display:flex;gap:8px;align-items:center;}.badge{font-size:11px;color:#7A6E60;background:#E8E0D0;padding:4px 10px;border-radius:20px;}.btn{font-size:12px;font-variation-settings:'wght' 500;color:#F5F0E8;background:#1A1208;padding:6px 14px;border-radius:6px;cursor:pointer;border:none;font-family:'Nilio',serif;}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:20px 24px;}.stat{background:white;border:1px solid #DDD8CE;border-radius:8px;padding:16px;}.slabel{font-size:11px;color:#7A6E60;margin-bottom:6px;}.sval{font-size:22px;font-variation-settings:'wght' 700;color:#1A1208;letter-spacing:-0.02em;}.sdelta{font-size:11px;margin-top:4px;font-variation-settings:'wght' 500;}.up{color:#3B8C5A;}.down{color:#C0392B;}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 24px 24px;flex:1;overflow:hidden;}.card{background:white;border:1px solid #DDD8CE;border-radius:8px;padding:16px;overflow:hidden;}.ctitle{font-size:13px;font-variation-settings:'wght' 600;color:#1A1208;margin-bottom:14px;}.table{display:flex;flex-direction:column;}.trow{display:grid;grid-template-columns:1fr auto auto;gap:12px;padding:8px 0;border-bottom:1px solid #F0EBE2;font-size:12px;color:#1A1208;align-items:center;}.trow.hd{font-variation-settings:'wght' 500;color:#7A6E60;font-size:11px;}.pill{font-size:10px;font-variation-settings:'wght' 500;padding:2px 8px;border-radius:20px;}.g{background:#E8F5E9;color:#2E7D32;}.y{background:#FFF8E1;color:#F57F17;}.b{background:#E3F2FD;color:#1565C0;}.gr{background:#F5F5F5;color:#757575;}.acts{display:flex;flex-direction:column;gap:16px;}.act{display:flex;gap:10px;align-items:flex-start;}.dot{width:6px;height:6px;border-radius:50%;background:#C8A882;flex-shrink:0;margin-top:5px;}.atxt{font-size:12px;color:#1A1208;}.atime{font-size:11px;color:#7A6E60;margin-top:2px;}@media(max-width:600px){.sidebar{display:none}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}</style></head><body><div class='sidebar'><div class='logo'>Lumio</div><nav class='sidenav'><a class='navitem active'>Overview</a><a class='navitem'>Analytics</a><a class='navitem'>Projects</a><a class='navitem'>Team</a><a class='navitem'>Settings</a></nav><div class='sb-footer'><div class='avatar'>GN</div><div><div class='uname'>Gauthier N.</div><div class='urole'>Admin</div></div></div></div><div class='main'><div class='topbar'><div class='page-title'>Overview</div><div class='topbar-r'><div class='badge'>Jan 2025</div><button class='btn'>Export</button></div></div><div class='stats'><div class='stat'><div class='slabel'>Revenue</div><div class='sval'>€84,291</div><div class='sdelta up'>+12.4%</div></div><div class='stat'><div class='slabel'>Users</div><div class='sval'>12,048</div><div class='sdelta up'>+8.1%</div></div><div class='stat'><div class='slabel'>Churn</div><div class='sval'>2.3%</div><div class='sdelta down'>-0.4%</div></div><div class='stat'><div class='slabel'>NPS</div><div class='sval'>67</div><div class='sdelta up'>+3</div></div></div><div class='grid'><div class='card'><div class='ctitle'>Recent Projects</div><div class='table'><div class='trow hd'><span>Name</span><span>Status</span><span>Due</span></div><div class='trow'><span>Nilio v2</span><span class='pill g'>Active</span><span>Mar 12</span></div><div class='trow'><span>Brand Refresh</span><span class='pill y'>Review</span><span>Mar 28</span></div><div class='trow'><span>Design System</span><span class='pill b'>Draft</span><span>Apr 5</span></div><div class='trow'><span>Mobile App</span><span class='pill gr'>Paused</span><span>—</span></div></div></div><div class='card'><div class='ctitle'>Activity</div><div class='acts'><div class='act'><div class='dot'></div><div><div class='atxt'>New milestone reached on Nilio v2</div><div class='atime'>2 hours ago</div></div></div><div class='act'><div class='dot'></div><div><div class='atxt'>Sara left a comment on Brand Refresh</div><div class='atime'>Yesterday</div></div></div><div class='act'><div class='dot'></div><div><div class='atxt'>Design System moved to Draft</div><div class='atime'>Jan 28</div></div></div></div></div></div></div></body></html>"></iframe>
   </div>
   <div class="inuse-panel" id="inuse-landing">
-    <iframe srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>@font-face{font-family:'Chiara';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Chiara',sans-serif;-webkit-font-smoothing:antialiased;}body{background:#0D0D0D;color:#F0EBE2;overflow:hidden;}.nav{display:flex;align-items:center;gap:32px;padding:20px 40px;border-bottom:1px solid #2A2A2A;}.brand{font-variation-settings:'wght' 700;font-size:18px;color:#F0EBE2;letter-spacing:-0.02em;flex-shrink:0;}.navlinks{display:flex;gap:24px;flex:1;}.navlinks a{font-size:13px;color:#888;font-variation-settings:'wght' 400;}.cta{font-size:12px;font-variation-settings:'wght' 500;color:#0D0D0D;background:#F0EBE2;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-family:'Chiara',sans-serif;flex-shrink:0;}.hero{padding:56px 40px 40px;}.tag{display:inline-block;font-size:11px;font-variation-settings:'wght' 500;color:#C8A882;border:1px solid #3A3028;padding:4px 12px;border-radius:20px;margin-bottom:24px;letter-spacing:0.04em;}h1{font-size:clamp(40px,6vw,68px);font-variation-settings:'wght' 700;color:#F0EBE2;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px;}h1 em{font-style:normal;font-variation-settings:'wght' 300;color:#C8A882;}.sub{font-size:15px;font-variation-settings:'wght' 400;color:#888;line-height:1.6;max-width:480px;margin-bottom:28px;}.actions{display:flex;gap:12px;}.btnp{font-size:14px;font-variation-settings:'wght' 500;background:#F0EBE2;color:#0D0D0D;border:none;padding:12px 24px;border-radius:8px;cursor:pointer;font-family:'Chiara',sans-serif;}.btng{font-size:14px;font-variation-settings:'wght' 400;background:none;color:#888;border:1px solid #2A2A2A;padding:12px 24px;border-radius:8px;cursor:pointer;font-family:'Chiara',sans-serif;}.feats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #2A2A2A;margin-top:40px;}.feat{padding:28px 40px;border-right:1px solid #2A2A2A;}.feat:last-child{border-right:none;}.ficon{font-size:18px;margin-bottom:12px;}.ftitle{font-size:14px;font-variation-settings:'wght' 600;color:#F0EBE2;margin-bottom:6px;}.fdesc{font-size:12px;font-variation-settings:'wght' 400;color:#666;line-height:1.6;}@media(max-width:600px){.nav{padding:16px 20px;flex-wrap:wrap;gap:12px}.navlinks{display:none}.hero{padding:40px 20px 24px}h1{font-size:34px}.feats{grid-template-columns:1fr}.feat{padding:20px}}</style></head><body><nav class='nav'><span class='brand'>Lumio</span><div class='navlinks'><a>Product</a><a>Pricing</a><a>About</a></div><button class='cta'>Get started</button></nav><div class='hero'><div class='tag'>Now in public beta</div><h1>Design tools<br>built for<br><em>teams</em></h1><p class='sub'>Lumio brings your whole design process into one place — from wireframes to handoff. Fast, flexible, and made for collaboration.</p><div class='actions'><button class='btnp'>Start for free</button><button class='btng'>See demo →</button></div></div><div class='feats'><div class='feat'><div class='ficon'>⚡</div><div class='ftitle'>Fast by default</div><div class='fdesc'>Built on a modern stack so everything stays snappy, even on large files.</div></div><div class='feat'><div class='ficon'>🤝</div><div class='ftitle'>Real-time collaboration</div><div class='fdesc'>Work with your team simultaneously without conflicts or version chaos.</div></div><div class='feat'><div class='ficon'>🎯</div><div class='ftitle'>Precision handoff</div><div class='fdesc'>Developers get exactly what they need — specs, assets, tokens.</div></div></div></body></html>"></iframe>
+    <iframe srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>@font-face{font-family:'Nilio';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Nilio',serif;-webkit-font-smoothing:antialiased;}body{background:#0D0D0D;color:#F0EBE2;overflow:hidden;}.nav{display:flex;align-items:center;gap:32px;padding:20px 40px;border-bottom:1px solid #2A2A2A;}.brand{font-variation-settings:'wght' 700;font-size:18px;color:#F0EBE2;letter-spacing:-0.02em;flex-shrink:0;}.navlinks{display:flex;gap:24px;flex:1;}.navlinks a{font-size:13px;color:#888;font-variation-settings:'wght' 400;}.cta{font-size:12px;font-variation-settings:'wght' 500;color:#0D0D0D;background:#F0EBE2;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-family:'Nilio',serif;flex-shrink:0;}.hero{padding:56px 40px 40px;}.tag{display:inline-block;font-size:11px;font-variation-settings:'wght' 500;color:#C8A882;border:1px solid #3A3028;padding:4px 12px;border-radius:20px;margin-bottom:24px;letter-spacing:0.04em;}h1{font-size:clamp(40px,6vw,68px);font-variation-settings:'wght' 700;color:#F0EBE2;line-height:1.05;letter-spacing:-0.03em;margin-bottom:20px;}h1 em{font-style:normal;font-variation-settings:'wght' 300;color:#C8A882;}.sub{font-size:15px;font-variation-settings:'wght' 400;color:#888;line-height:1.6;max-width:480px;margin-bottom:28px;}.actions{display:flex;gap:12px;}.btnp{font-size:14px;font-variation-settings:'wght' 500;background:#F0EBE2;color:#0D0D0D;border:none;padding:12px 24px;border-radius:8px;cursor:pointer;font-family:'Nilio',serif;}.btng{font-size:14px;font-variation-settings:'wght' 400;background:none;color:#888;border:1px solid #2A2A2A;padding:12px 24px;border-radius:8px;cursor:pointer;font-family:'Nilio',serif;}.feats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #2A2A2A;margin-top:40px;}.feat{padding:28px 40px;border-right:1px solid #2A2A2A;}.feat:last-child{border-right:none;}.ficon{font-size:18px;margin-bottom:12px;}.ftitle{font-size:14px;font-variation-settings:'wght' 600;color:#F0EBE2;margin-bottom:6px;}.fdesc{font-size:12px;font-variation-settings:'wght' 400;color:#666;line-height:1.6;}@media(max-width:600px){.nav{padding:16px 20px;flex-wrap:wrap;gap:12px}.navlinks{display:none}.hero{padding:40px 20px 24px}h1{font-size:34px}.feats{grid-template-columns:1fr}.feat{padding:20px}}</style></head><body><nav class='nav'><span class='brand'>Lumio</span><div class='navlinks'><a>Product</a><a>Pricing</a><a>About</a></div><button class='cta'>Get started</button></nav><div class='hero'><div class='tag'>Now in public beta</div><h1>Design tools<br>built for<br><em>teams</em></h1><p class='sub'>Lumio brings your whole design process into one place — from wireframes to handoff. Fast, flexible, and made for collaboration.</p><div class='actions'><button class='btnp'>Start for free</button><button class='btng'>See demo →</button></div></div><div class='feats'><div class='feat'><div class='ficon'>⚡</div><div class='ftitle'>Fast by default</div><div class='fdesc'>Built on a modern stack so everything stays snappy, even on large files.</div></div><div class='feat'><div class='ficon'>🤝</div><div class='ftitle'>Real-time collaboration</div><div class='fdesc'>Work with your team simultaneously without conflicts or version chaos.</div></div><div class='feat'><div class='ficon'>🎯</div><div class='ftitle'>Precision handoff</div><div class='fdesc'>Developers get exactly what they need — specs, assets, tokens.</div></div></div></body></html>"></iframe>
   </div>
   <div class="inuse-panel" id="inuse-article">
-    <iframe srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>@font-face{font-family:'Chiara';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Chiara',sans-serif;-webkit-font-smoothing:antialiased;}body{background:#FAFAF8;padding:48px 40px;overflow-y:auto;height:100vh;}.inner{max-width:620px;margin:0 auto;padding-bottom:24px;}.meta{font-size:11px;font-variation-settings:'wght' 400;color:#7A6E60;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;}h1{font-size:clamp(26px,4vw,44px);font-variation-settings:'wght' 700;color:#1A1208;line-height:1.1;letter-spacing:-0.02em;margin-bottom:18px;}.lead{font-size:17px;font-variation-settings:'wght' 400;color:#3A3028;line-height:1.6;margin-bottom:24px;}.divider{height:1px;background:#DDD8CE;margin-bottom:24px;}p{font-size:15px;font-variation-settings:'wght' 400;color:#3A3028;line-height:1.75;margin-bottom:18px;}blockquote{border-left:3px solid #C8A882;margin:28px 0;padding:4px 0 4px 20px;font-size:16px;font-variation-settings:'wght' 300;color:#1A1208;line-height:1.55;}h2{font-size:20px;font-variation-settings:'wght' 600;color:#1A1208;margin:32px 0 14px;letter-spacing:-0.01em;}@media(max-width:600px){body{padding:32px 20px}}</style></head><body><div class='inner'><div class='meta'>Typography · 6 min read</div><h1>Why variable fonts are the future of interface design</h1><p class='lead'>A single file. An infinite range of expression. Variable fonts are changing the way designers think about type — and it's only just beginning.</p><div class='divider'></div><p>For decades, type in digital products meant choosing from a fixed menu of weights — Regular, Bold, maybe SemiBold if you were lucky. Every weight was a separate file, a separate request, a separate compromise.</p><blockquote>&ldquo;Variable fonts don't just save bandwidth. They give designers a new dimension of expression that static fonts never could.&rdquo;</blockquote><p>With variable fonts, that compromise disappears. The entire weight axis lives in a single file. You pick exactly the weight you need — at 432, not 400 or 500.</p><h2>Designed for interfaces</h2><p>Interface typography has unique demands. It needs to be legible at 12px and expressive at 80px. Chiara was designed with these constraints in mind — optimised for screen rendering across the full weight range.</p><p>The result is a typeface that feels at home in a dashboard label or a hero headline — without ever feeling like a compromise.</p></div></body></html>"></iframe>
+    <iframe srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>@font-face{font-family:'Nilio';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Nilio',serif;-webkit-font-smoothing:antialiased;}body{background:#FAFAF8;padding:48px 40px;overflow-y:auto;height:100vh;}.inner{max-width:620px;margin:0 auto;padding-bottom:24px;}.meta{font-size:11px;font-variation-settings:'wght' 400;color:#7A6E60;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;}h1{font-size:clamp(26px,4vw,44px);font-variation-settings:'wght' 700;color:#1A1208;line-height:1.1;letter-spacing:-0.02em;margin-bottom:18px;}.lead{font-size:17px;font-variation-settings:'wght' 400;color:#3A3028;line-height:1.6;margin-bottom:24px;}.divider{height:1px;background:#DDD8CE;margin-bottom:24px;}p{font-size:15px;font-variation-settings:'wght' 400;color:#3A3028;line-height:1.75;margin-bottom:18px;}blockquote{border-left:3px solid #C8A882;margin:28px 0;padding:4px 0 4px 20px;font-size:16px;font-variation-settings:'wght' 300;color:#1A1208;line-height:1.55;}h2{font-size:20px;font-variation-settings:'wght' 600;color:#1A1208;margin:32px 0 14px;letter-spacing:-0.01em;}@media(max-width:600px){body{padding:32px 20px}}</style></head><body><div class='inner'><div class='meta'>Typography · 6 min read</div><h1>Why variable fonts are the future of interface design</h1><p class='lead'>A single file. An infinite range of expression. Variable fonts are changing the way designers think about type — and it's only just beginning.</p><div class='divider'></div><p>For decades, type in digital products meant choosing from a fixed menu of weights — Regular, Bold, maybe SemiBold if you were lucky. Every weight was a separate file, a separate request, a separate compromise.</p><blockquote>&ldquo;Variable fonts don't just save bandwidth. They give designers a new dimension of expression that static fonts never could.&rdquo;</blockquote><p>With variable fonts, that compromise disappears. The entire weight axis lives in a single file. You pick exactly the weight you need — at 432, not 400 or 500.</p><h2>Designed for interfaces</h2><p>Interface typography has unique demands. It needs to be legible at 12px and expressive at 80px. Nilio was designed with these constraints in mind — optimised for screen rendering across the full weight range.</p><p>The result is a typeface that feels at home in a dashboard label or a hero headline — without ever feeling like a compromise.</p></div></body></html>"></iframe>
   </div>
 </section>
 
@@ -603,9 +603,9 @@ footer a:hover { color: var(--ink); }
       <div class="code-panel active" id="tab-css">
         <button class="copy-btn" onclick="copyCode('css')">Copy</button>
         <pre><span class="kw">@font-face</span> {
-  <span class="nm">font-family</span>: <span class="st">'Chiara'</span>;
+  <span class="nm">font-family</span>: <span class="st">'Nilio'</span>;
   <span class="nm">src</span>: <span class="kw">url</span>(<span class="st">'https://cdn.jsdelivr.net/gh/gauthierniglio/
-       chiara-font@v1.0/web/ChiaraVF.woff2'</span>) <span class="kw">format</span>(<span class="st">'woff2'</span>);
+       nilio-font@v1.0/web/NilioVF.woff2'</span>) <span class="kw">format</span>(<span class="st">'woff2'</span>);
   <span class="nm">font-weight</span>: <span class="st">100 900</span>;
   <span class="nm">font-display</span>: <span class="st">swap</span>;
 }</pre>
@@ -613,7 +613,7 @@ footer a:hover { color: var(--ink); }
       <div class="code-panel" id="tab-html">
         <button class="copy-btn" onclick="copyCode('html')">Copy</button>
         <pre><span class="cm">&lt;!-- jsDelivr CDN --&gt;</span>
-<span class="kw">&lt;link</span> <span class="nm">rel</span>=<span class="st">"stylesheet"</span> <span class="nm">href</span>=<span class="st">"chiara.css"</span><span class="kw">&gt;</span></pre>
+<span class="kw">&lt;link</span> <span class="nm">rel</span>=<span class="st">"stylesheet"</span> <span class="nm">href</span>=<span class="st">"nilio.css"</span><span class="kw">&gt;</span></pre>
       </div>
       <div class="code-panel" id="tab-usage">
         <button class="copy-btn" onclick="copyCode('usage')">Copy</button>
@@ -627,15 +627,15 @@ footer a:hover { color: var(--ink); }
 <span class="nm">.alt-G</span> { <span class="nm">font-feature-settings</span>: <span class="st">'ss04' 1</span>; }</pre>
       </div>
       <p style="margin-top:20px;font-family:var(--mono);font-size:10px;color:var(--ink-muted);letter-spacing:0.06em;">
-        Free to use · CC BY-ND 4.0 · <a href="https://github.com/gauthierniglio/chiara-font" style="color:var(--ink-muted);text-decoration:underline;" target="_blank">GitHub ↗</a>
+        Free to use · CC BY-ND 4.0 · <a href="https://github.com/gauthierniglio/nilio-font" style="color:var(--ink-muted);text-decoration:underline;" target="_blank">GitHub ↗</a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Chiara — Variable Font by <a href="https://gauthierniglio.framer.website/" target="_blank">Gauthier Niglio</a></p>
-  <p>CC BY-ND 4.0 · <a href="https://github.com/gauthierniglio/chiara-font" target="_blank">github.com/gauthierniglio/chiara-font</a></p>
+  <p>Nilio — Variable Font by <a href="https://gauthierniglio.framer.website/" target="_blank">Gauthier Niglio</a></p>
+  <p>CC BY-ND 4.0 · <a href="https://github.com/gauthierniglio/nilio-font" target="_blank">github.com/gauthierniglio/nilio-font</a></p>
 </footer>
 
 <script>
@@ -755,7 +755,7 @@ function bindRange(id, key, valId, cb) {
   };
 }
 
-document.getElementById('txt').oninput = function() { state.text = this.value || 'Chiara'; render(); };
+document.getElementById('txt').oninput = function() { state.text = this.value || 'Nilio'; render(); };
 bindRange('sz', 'sz', 'sz-v');
 bindRange('wmin', 'wmin', 'wmin-v');
 bindRange('wmax', 'wmax', 'wmax-v');
@@ -786,8 +786,8 @@ function switchInUse(id) {
 }
 
 const CODES = {
-  css: `@font-face {\n  font-family: 'Chiara';\n  src: url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff2') format('woff2'),\n       url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff') format('woff');\n  font-weight: 100 900;\n  font-style: normal;\n  font-display: swap;\n}`,
-  html: `<link rel="stylesheet" href="chiara.css">`,
+  css: `@font-face {\n  font-family: 'Nilio';\n  src: url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2'),\n       url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff') format('woff');\n  font-weight: 100 900;\n  font-style: normal;\n  font-display: swap;\n}`,
+  html: `<link rel="stylesheet" href="nilio.css">`,
   usage: `h1 { font-variation-settings: 'wght' 700; }\n\n.alt-a { font-feature-settings: 'ss01' 1; }\n.alt-l { font-feature-settings: 'ss02' 1; }\n.alt-y { font-feature-settings: 'ss03' 1; }\n.alt-G { font-feature-settings: 'ss04' 1; }`
 };
 
