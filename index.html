@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nilio — Variable Font</title>
+<link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+<link rel="apple-touch-icon" href="icon/favicon-180.png">
+<style>
+@font-face {
+  font-family: 'Nilio';
+  src: url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chiara';
+  src: url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #1A1A2E;
+  --ink: #E8D8FF;
+  --ink-muted: #7A7A9E;
+  --accent: #9B8FD4;
+  --border: #2E2E4E;
+  --nilio: 'Nilio', Georgia, serif;
+  --mono: 'SF Mono', 'Fira Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--nilio);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: var(--bg);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+nav.scrolled { border-color: var(--border); }
+
+.nav-logo {
+  font-variation-settings: 'wght' 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ── THEME PICKER ── */
+.theme-wrap { position: relative; flex-shrink: 0; }
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 10px 5px 6px;
+  cursor: pointer;
+  color: var(--ink-muted);
+  transition: border-color 0.2s;
+}
+.theme-btn:hover { border-color: var(--ink-muted); }
+
+.theme-preview {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  outline: 1px solid rgba(128,128,128,0.2);
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.theme-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+.theme-wrap.open .theme-dropdown { display: flex; }
+
+.theme-dropdown-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+}
+.theme-dots { display: flex; gap: 8px; }
+
+.theme-dot {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  outline: 1px solid rgba(128,128,128,0.25);
+  transition: transform 0.15s, border-color 0.15s;
+}
+.theme-dot:hover { transform: scale(1.15); }
+.theme-dot.active { border-color: var(--accent); }
+
+/* ── INTRO SCROLL ── */
+#scroll-driver { height: 300vh; position: relative; }
+
+#intro-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.intro-word {
+  font-variation-settings: 'wght' 900;
+  color: var(--ink);
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-size: 8vw;
+  will-change: font-size, opacity;
+  transition: color 0.3s;
+}
+
+/* ── STRIPE GENERATOR ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.stripe-row {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  line-height: 1.2;
+  font-family: var(--nilio);
+  transition: color 0.3s;
+}
+
+.hero-controls {
+  padding: 20px 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  transition: border-color 0.3s;
+}
+
+.ctrl-divider { width: 1px; height: 24px; background: var(--border); flex-shrink: 0; }
+
+.ctrl-group { display: flex; align-items: center; gap: 10px; }
+
+.ctrl-group label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.ctrl-group input[type=range] {
+  -webkit-appearance: none;
+  width: 100px; height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  outline: none;
+}
+.ctrl-group input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+}
+
+.ctrl-group .val {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink);
+  min-width: 28px;
+}
+
+.ctrl-text input[type=text] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 4px 0;
+  font-family: var(--nilio);
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  width: 100px;
+  font-variation-settings: 'wght' 400;
+}
+.ctrl-text input[type=text]:focus { border-color: var(--ink); }
+
+/* ── SECTIONS ── */
+section {
+  padding: 120px 40px;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  margin-bottom: 64px;
+}
+
+/* ── SPECIMEN ── */
+.specimen-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.specimen-row:first-child { border-top: 1px solid var(--border); }
+
+.specimen-text { font-family: var(--nilio); color: var(--ink); line-height: 1; }
+
+.specimen-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  margin-left: 24px;
+}
+
+.pangram {
+  padding: 80px 0 40px;
+  font-size: clamp(28px, 4vw, 52px);
+  font-variation-settings: 'wght' 300;
+  line-height: 1.3;
+  color: var(--ink);
+  max-width: 900px;
+}
+
+.alphabet {
+  padding: 40px 0 80px;
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-variation-settings: 'wght' 400;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  line-height: 1.8;
+}
+
+/* ── IN USE ── */
+.inuse-panel iframe {
+  width: 100%;
+  height: 560px;
+  border: none;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ── INSTALL ── */
+.install-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.install-intro {
+  font-size: clamp(32px, 4vw, 56px);
+  font-variation-settings: 'wght' 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.install-intro em {
+  font-style: normal;
+  font-variation-settings: 'wght' 700;
+}
+
+.code-tabs {
+  display: flex;
+  border-bottom: 1px solid #2A2018;
+}
+
+.tab-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s;
+}
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+.code-panel {
+  display: none;
+  background: #0E0B08;
+  border-radius: 0 4px 4px 4px;
+  padding: 28px;
+  position: relative;
+}
+.code-panel.active { display: block; }
+
+.code-panel pre {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.8;
+  color: #E8E0D0;
+  white-space: pre;
+  overflow-x: auto;
+  max-width: 0;
+  min-width: 100%;
+}
+.code-panel .cm { color: #6A6058; }
+.code-panel .kw { color: #C8A882; }
+.code-panel .st { color: #A8C8A0; }
+.code-panel .nm { color: #E8E0D0; }
+
+.copy-btn {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6A6058;
+  background: none;
+  border: 1px solid #2A2018;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.copy-btn:hover { color: #E8E0D0; border-color: #6A6058; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer p {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+}
+footer a { color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--ink); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { gap: 16px; }
+  .hero-controls { padding: 16px 20px; gap: 16px; }
+  section { padding: 80px 20px; }
+  footer { flex-direction: column; gap: 12px; padding: 32px 20px; }
+  .install-grid { grid-template-columns: 1fr; }
+  .ctrl-group input[type=range] { width: 70px; }
+  .ctrl-divider { display: none; }
+  .inuse-panel iframe { height: 480px; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">Nilio</a>
+  <ul class="nav-links">
+    <li><a href="#hero">Generator</a></li>
+    <li><a href="#specimen">Specimen</a></li>
+    <li><a href="#inuse">In Use</a></li>
+    <li><a href="#install">Install</a></li>
+    <li><a href="https://github.com/gauthierniglio/nilio-font" target="_blank">GitHub</a></li>
+  </ul>
+  <div class="theme-wrap" id="theme-wrap">
+    <button class="theme-btn" onclick="document.getElementById('theme-wrap').classList.toggle('open')" title="Switch theme">
+      <span class="theme-preview" id="theme-preview"></span>
+      <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <div class="theme-dropdown">
+      <div class="theme-dropdown-label">Theme</div>
+      <div class="theme-dots" id="theme-dots"></div>
+    </div>
+  </div>
+</nav>
+
+<!-- INTRO -->
+<div id="scroll-driver">
+  <div id="intro-sticky">
+    <div class="intro-word" id="intro-word">Nilio</div>
+  </div>
+</div>
+
+<!-- GENERATOR -->
+<section id="hero">
+  <div id="stripes" style="flex:1;overflow:hidden;"></div>
+  <div class="hero-controls">
+    <div class="ctrl-group ctrl-text">
+      <label>Text</label>
+      <input type="text" id="txt" value="Nilio" maxlength="30">
+    </div>
+    <div class="ctrl-divider"></div>
+    <div class="ctrl-group">
+      <label>Min</label>
+      <input type="range" id="wmin" min="400" max="900" step="50" value="400">
+      <span class="val" id="wmin-v">400</span>
+    </div>
+    <div class="ctrl-group">
+      <label>Max</label>
+      <input type="range" id="wmax" min="400" max="900" step="50" value="900">
+      <span class="val" id="wmax-v">900</span>
+    </div>
+    <div class="ctrl-group">
+      <label>Size</label>
+      <input type="range" id="sz" min="24" max="140" step="4" value="64">
+      <span class="val" id="sz-v">64</span>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIMEN -->
+<section id="specimen">
+  <p class="section-label">01 — Specimen</p>
+  <div class="pangram">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</div>
+  <div class="alphabet">
+    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+    a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
+    0 1 2 3 4 5 6 7 8 9 ! @ # $ % & * ( ) , . ; : ? / —
+  </div>
+  <div>
+    <div class="specimen-row">
+      <span class="specimen-text" style="font-size:72px;font-variation-settings:'wght' 400;">Interface</span>
+      <span class="specimen-meta">Regular · 400</span>
+    </div>
+    <div class="specimen-row">
+      <span class="specimen-text" style="font-size:64px;font-variation-settings:'wght' 500;">Interface</span>
+      <span class="specimen-meta">Medium · 500</span>
+    </div>
+    <div class="specimen-row">
+      <span class="specimen-text" style="font-size:56px;font-variation-settings:'wght' 600;">Interface</span>
+      <span class="specimen-meta">SemiBold · 600</span>
+    </div>
+    <div class="specimen-row">
+      <span class="specimen-text" style="font-size:48px;font-variation-settings:'wght' 700;">Interface</span>
+      <span class="specimen-meta">Bold · 700</span>
+    </div>
+    <div class="specimen-row">
+      <span class="specimen-text" style="font-size:40px;font-variation-settings:'wght' 800;">Interface</span>
+      <span class="specimen-meta">ExtraBold · 800</span>
+    </div>
+    <div class="specimen-row">
+      <span class="specimen-text" style="font-size:32px;font-variation-settings:'wght' 900;">Interface</span>
+      <span class="specimen-meta">Black · 900</span>
+    </div>
+  </div>
+</section>
+
+<!-- IN USE -->
+<section id="inuse">
+  <p class="section-label">02 — In Use</p>
+  <div class="inuse-panel active" id="inuse-article">
+    <iframe srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>@font-face{font-family:'Nilio';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}@font-face{font-family:'Chiara';src:url('https://cdn.jsdelivr.net/gh/gauthierniglio/chiara-font@v1.0/web/ChiaraVF.woff2') format('woff2');font-weight:100 900;font-display:swap;}*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased;}body{background:#FAFAF8;padding:48px 40px;overflow-y:auto;height:100vh;font-family:'Chiara',sans-serif;}.inner{max-width:620px;margin:0 auto;padding-bottom:24px;}.meta{font-family:'Chiara',sans-serif;font-size:11px;font-variation-settings:'wght' 400;color:#7A6E60;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;}h1{font-family:'Nilio',serif;font-size:clamp(28px,4vw,48px);font-variation-settings:'wght' 700;color:#1A1208;line-height:1.1;letter-spacing:-0.01em;margin-bottom:18px;}.lead{font-family:'Nilio',serif;font-size:19px;font-variation-settings:'wght' 400;color:#3A3028;line-height:1.5;margin-bottom:24px;}.divider{height:1px;background:#DDD8CE;margin-bottom:24px;}p{font-family:'Chiara',sans-serif;font-size:15px;font-variation-settings:'wght' 400;color:#3A3028;line-height:1.75;margin-bottom:18px;}blockquote{font-family:'Chiara',sans-serif;border-left:3px solid #9B8FD4;margin:28px 0;padding:4px 0 4px 20px;font-size:16px;font-variation-settings:'wght' 300;color:#1A1208;line-height:1.55;}h2{font-family:'Chiara',sans-serif;font-size:20px;font-variation-settings:'wght' 600;color:#1A1208;margin:32px 0 14px;letter-spacing:-0.01em;}@media(max-width:600px){body{padding:32px 20px}}</style></head><body><div class='inner'><div class='meta'>Typography · 6 min read</div><h1>Why a serif still leads the page</h1><p class='lead'>Nilio is built for the moment a reader's eye lands first — the headline, the opening line, the words that set the tone before anything else is read.</p><div class='divider'></div><p>Display type carries a different weight than body copy. It doesn't need to disappear into the page — it needs to announce it. Nilio was drawn with that single job in mind: to hold a headline with confidence, at any size, across any layout.</p><blockquote>&ldquo;A good display serif doesn't compete with the body text. It sets the stage for it.&rdquo;</blockquote><p>Paired here with Chiara for the running text, Nilio handles the title and the lead — the two moments where a reader decides whether to keep going. The contrast between a display serif and an interface sans is deliberate: one draws attention, the other holds it.</p><h2>Built for pairing</h2><p>Nilio ships as a variable font with the full weight range in one file, plus static instances from Regular to Black for tools that don't yet support variable axes.</p></div></body></html>"></iframe>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section id="install">
+  <p class="section-label">03 — Install</p>
+  <div class="install-grid">
+    <div class="install-intro">One file.<br><em>Every weight.</em></div>
+    <div>
+      <div class="code-tabs">
+        <button class="tab-btn active" onclick="switchTab('css')">CSS</button>
+        <button class="tab-btn" onclick="switchTab('html')">HTML</button>
+        <button class="tab-btn" onclick="switchTab('usage')">Usage</button>
+      </div>
+      <div class="code-panel active" id="tab-css">
+        <button class="copy-btn" onclick="copyCode('css')">Copy</button>
+        <pre><span class="kw">@font-face</span> {
+  <span class="nm">font-family</span>: <span class="st">'Nilio'</span>;
+  <span class="nm">src</span>: <span class="kw">url</span>(<span class="st">'https://cdn.jsdelivr.net/gh/gauthierniglio/
+       nilio-font@v1.0/web/NilioVF.woff2'</span>) <span class="kw">format</span>(<span class="st">'woff2'</span>);
+  <span class="nm">font-weight</span>: <span class="st">100 900</span>;
+  <span class="nm">font-display</span>: <span class="st">swap</span>;
+}</pre>
+      </div>
+      <div class="code-panel" id="tab-html">
+        <button class="copy-btn" onclick="copyCode('html')">Copy</button>
+        <pre><span class="cm">&lt;!-- jsDelivr CDN --&gt;</span>
+<span class="kw">&lt;link</span> <span class="nm">rel</span>=<span class="st">"stylesheet"</span> <span class="nm">href</span>=<span class="st">"nilio.css"</span><span class="kw">&gt;</span></pre>
+      </div>
+      <div class="code-panel" id="tab-usage">
+        <button class="copy-btn" onclick="copyCode('usage')">Copy</button>
+        <pre><span class="cm">/* Variable weight */</span>
+<span class="nm">h1</span> { <span class="nm">font-variation-settings</span>: <span class="st">'wght' 700</span>; }</pre>
+      </div>
+      <p style="margin-top:20px;font-family:var(--mono);font-size:10px;color:var(--ink-muted);letter-spacing:0.06em;">
+        Free to use · CC BY-ND 4.0 · <a href="https://github.com/gauthierniglio/nilio-font" style="color:var(--ink-muted);text-decoration:underline;" target="_blank">GitHub ↗</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Nilio — Variable Font by <a href="https://gauthierniglio.framer.website/" target="_blank">Gauthier Niglio</a></p>
+  <p>CC BY-ND 4.0 · <a href="https://github.com/gauthierniglio/nilio-font" target="_blank">github.com/gauthierniglio/nilio-font</a></p>
+</footer>
+
+<script>
+const PALETTES = [
+  { name:'Encre',  bg:'#1A1A2E', fg:'#E8D8FF', accent:'#9B8FD4', border:'#2E2E4E', muted:'#7A7A9E' },
+  { name:'Crème',  bg:'#F5F0E8', fg:'#1A1208', accent:'#C8A882', border:'#DDD8CE', muted:'#7A6E60' },
+  { name:'Nuit',   bg:'#1A1208', fg:'#F5F0E8', accent:'#C8A882', border:'#3A3028', muted:'#7A6E60' },
+  { name:'Forêt',  bg:'#0D2818', fg:'#C8F0D8', accent:'#6FCF97', border:'#1A3D28', muted:'#5A8A6A' },
+  { name:'Terre',  bg:'#2C1810', fg:'#F0C8A8', accent:'#C8A882', border:'#4A2E20', muted:'#8A6A58' },
+];
+
+let state = {
+  text: 'Nilio',
+  wmin: 400, wmax: 900,
+  sz: 64,
+  palette: 0
+};
+
+/* ── THEME ── */
+function applyTheme(idx) {
+  const p = PALETTES[idx];
+  const r = document.documentElement;
+  r.style.setProperty('--bg', p.bg);
+  r.style.setProperty('--ink', p.fg);
+  r.style.setProperty('--accent', p.accent);
+  r.style.setProperty('--border', p.border);
+  r.style.setProperty('--ink-muted', p.muted);
+  document.getElementById('nav').style.background = p.bg;
+  document.getElementById('theme-preview').style.background = p.fg;
+  document.querySelectorAll('.theme-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  state.palette = idx;
+  render();
+}
+
+function buildThemePicker() {
+  const el = document.getElementById('theme-dots');
+  PALETTES.forEach((p, i) => {
+    const d = document.createElement('div');
+    d.className = 'theme-dot' + (i === 0 ? ' active' : '');
+    d.style.background = p.bg;
+    d.title = p.name;
+    d.onclick = () => {
+      applyTheme(i);
+      document.getElementById('theme-wrap').classList.remove('open');
+    };
+    el.appendChild(d);
+  });
+}
+
+document.addEventListener('click', e => {
+  const w = document.getElementById('theme-wrap');
+  if (!w.contains(e.target)) w.classList.remove('open');
+});
+
+/* ── STRIPE RENDER ── */
+function getWeights(wmin, wmax) {
+  const out = [];
+  for (let w = wmin; w <= wmax; w += 50) out.push(w);
+  return out;
+}
+
+function render() {
+  const { text, wmin, wmax, sz } = state;
+  const fg = PALETTES[state.palette].fg;
+  const bg = PALETTES[state.palette].bg;
+  const container = document.getElementById('stripes');
+  const hero = document.getElementById('hero');
+  hero.style.background = bg;
+  container.innerHTML = '';
+  const weights = getWeights(wmin, wmax);
+  const repeat = Math.ceil(window.innerWidth / (sz * 0.55 * (text.length || 1))) + 3;
+  weights.forEach(w => {
+    const row = document.createElement('span');
+    row.className = 'stripe-row';
+    const rowHeight = container.clientHeight / weights.length;
+    row.style.cssText = `font-size:${Math.min(sz, rowHeight*0.8)}px;height:${rowHeight}px;font-variation-settings:'wght' ${w};color:${fg};`;
+    row.textContent = (text + ' ').repeat(repeat);
+    container.appendChild(row);
+  });
+}
+
+/* ── INTRO SCROLL ── */
+function handleIntroScroll() {
+  const driver = document.getElementById('scroll-driver');
+  const word = document.getElementById('intro-word');
+  const scrolled = Math.max(0, -driver.getBoundingClientRect().top);
+  const progress = Math.min(1, scrolled / (driver.offsetHeight - window.innerHeight));
+  word.style.fontSize = (8 + progress * 44) + 'vw';
+  const wghtP = Math.min(1, progress / 0.6);
+  word.style.fontVariationSettings = `'wght' ${Math.round(900 - wghtP * 500)}`;
+  word.style.opacity = progress < 0.85 ? 1 : 1 - (progress - 0.85) / 0.15;
+  word.style.color = PALETTES[state.palette].fg;
+}
+
+/* ── BINDINGS ── */
+function bindRange(id, key, valId, cb) {
+  document.getElementById(id).oninput = function() {
+    state[key] = +this.value;
+    document.getElementById(valId).textContent = this.value;
+    if (cb) cb(); else render();
+  };
+}
+
+document.getElementById('txt').oninput = function() { state.text = this.value || 'Nilio'; render(); };
+bindRange('sz', 'sz', 'sz-v');
+bindRange('wmin', 'wmin', 'wmin-v');
+bindRange('wmax', 'wmax', 'wmax-v');
+
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  handleIntroScroll();
+});
+window.addEventListener('resize', render);
+
+/* ── TABS ── */
+function switchTab(id) {
+  const ids = ['css','html','usage'];
+  document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', ids[i] === id));
+  document.querySelectorAll('.code-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
+}
+
+const CODES = {
+  css: `@font-face {\n  font-family: 'Nilio';\n  src: url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff2') format('woff2'),\n       url('https://cdn.jsdelivr.net/gh/gauthierniglio/nilio-font@v1.0/web/NilioVF.woff') format('woff');\n  font-weight: 100 900;\n  font-style: normal;\n  font-display: swap;\n}`,
+  html: `<link rel="stylesheet" href="nilio.css">`,
+  usage: `h1 { font-variation-settings: 'wght' 700; }`
+};
+
+function copyCode(id) {
+  navigator.clipboard.writeText(CODES[id]).then(() => {
+    const btn = document.querySelector('#tab-' + id + ' .copy-btn');
+    btn.textContent = 'Copied';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+
+/* ── INIT ── */
+buildThemePicker();
+document.getElementById('theme-preview').style.background = PALETTES[0].fg;
+render();
+handleIntroScroll();
+</script>
+</body>
+</html>
