@@ -1,6 +1,6 @@
 # Nilio
 
-Nilio is a variable font designed for interfaces. Built with legibility and rhythm in mind, it adapts to a wide range of weights through a single variable axis — making it practical for both UI and display use.
+Nilio is a variable font designed for interfaces. Built with legibility and rhythm in mind, it adapts to a wide range of weights through a single variable axis — making it practical for display use.
 
 **Axis:** Weight (`wght`) — 100 to 900  
 **Formats:** `.woff2` (web), `.woff` (web fallback), `.ttf` (desktop)
